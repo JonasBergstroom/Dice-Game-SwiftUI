@@ -20,8 +20,8 @@ struct ContentView: View {
                     .scaledToFit()
                     Spacer()
                 HStack {
-                Image("dice1")
-                Image("dice2")
+                    DiceView(n: 1)
+                    DiceView(n: 1)
                 }
                 .padding(.horizontal)
                 Spacer()
@@ -39,9 +39,18 @@ struct ContentView: View {
     }
 }
 
+struct DiceView: View {
+    
+    let n: Int
+    var body: some View {
+        Image("dice\(n)")
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
+
